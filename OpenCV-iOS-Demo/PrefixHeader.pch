@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  OpenCV-iOS-Demo
+//
+//  Created by mizu bai on 2021/7/28.
+//
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __cplusplus
+
+#import <opencv2/opencv.hpp>
+#import <opencv2/core.hpp>
+#import <opencv2/imgcodecs.hpp>
+#import <opencv2/highgui.hpp>
+
+#endif
+
+#endif /* PrefixHeader_pch */

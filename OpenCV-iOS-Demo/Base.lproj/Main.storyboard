@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-rh-fGN">
+                                <rect key="frame" x="0.0" y="94" width="414" height="607"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oxM-LO-4kQ">
+                                <rect key="frame" x="50" y="751" width="314" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="kbM-3Z-VCg"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Source"/>
+                                    <segment title="Gray"/>
+                                    <segment title="Binary"/>
+                                    <segment title="Blur"/>
+                                </segments>
+                                <connections>
+                                    <action selector="imageOperationSegmentedControlDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="RMw-uB-bsY"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the image below to select from album." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVS-6I-0Wz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="L9B-TY-l2g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cf7-rh-fGN" secondAttribute="trailing" id="2Ei-vK-pLG"/>
+                            <constraint firstItem="KVS-6I-0Wz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2nU-Cy-C9b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oxM-LO-4kQ" secondAttribute="bottom" constant="80" id="Fer-VF-wuI"/>
+                            <constraint firstItem="KVS-6I-0Wz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KQN-ci-ztc"/>
+                            <constraint firstItem="Cf7-rh-fGN" firstAttribute="top" secondItem="KVS-6I-0Wz" secondAttribute="bottom" id="Oe0-sh-eto"/>
+                            <constraint firstItem="Cf7-rh-fGN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bML-bz-hmb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oxM-LO-4kQ" secondAttribute="trailing" constant="50" id="gCq-PG-vFi"/>
+                            <constraint firstItem="oxM-LO-4kQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="n1m-Gr-X8r"/>
+                            <constraint firstItem="oxM-LO-4kQ" firstAttribute="top" secondItem="Cf7-rh-fGN" secondAttribute="bottom" constant="50" id="s2x-xj-GvZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVS-6I-0Wz" secondAttribute="trailing" id="ssC-r9-ujM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageOperationSegmentedContorol" destination="oxM-LO-4kQ" id="LTQ-GW-HaI"/>
+                        <outlet property="imageView" destination="Cf7-rh-fGN" id="L8k-QP-qwP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
