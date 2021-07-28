@@ -13,4 +13,4 @@ $ open -a Xcode OpenCV-iOS-Demo.xcworkspace
 
 ## Preview
 
-[screenshot](https://github.com/mizu-bai/OpenCV-iOS-Demo/raw/main/screenshot.png)
+![screenshot](https://github.com/mizu-bai/OpenCV-iOS-Demo/raw/main/screenshot.png)
