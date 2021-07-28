@@ -5,10 +5,10 @@ OpenCV running on iOS
 ## Run
 
 ```sh
-git clone https://github.com/mizu-bai/OpenCV-iOS-Demo.git
-cd OpenCV-iOS-Demo
-pod install
-open -a Xcode OpenCV-iOS-Demo.xcworkspace
+$ git clone https://github.com/mizu-bai/OpenCV-iOS-Demo.git
+$ cd OpenCV-iOS-Demo
+$ pod install
+$ open -a Xcode OpenCV-iOS-Demo.xcworkspace
 ```
 
 ## Preview
