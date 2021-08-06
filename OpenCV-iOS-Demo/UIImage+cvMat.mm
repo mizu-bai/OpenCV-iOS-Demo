@@ -14,16 +14,16 @@
 
     cv::Mat cvMat(static_cast<int>(rows), static_cast<int>(cols), CV_8UC4);
 
-    CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                                             // data
-                                                    static_cast<size_t>(cols),                              // width
-                                                    static_cast<size_t>(rows),                              // height
-                                                    8,                                                      // bitsPerComponent
-                                                    cvMat.step[0],                                          // bytesPerRow
-                                                    colorSpaceRef,                                          // space
-                                                    kCGImageAlphaNoneSkipLast | kCGBitmapByteOrderDefault); // bitmapInfo
+    CGContextRef context = CGBitmapContextCreate(cvMat.data,                                             // data
+                                                 static_cast<size_t>(cols),                              // width
+                                                 static_cast<size_t>(rows),                              // height
+                                                 8,                                                      // bitsPerComponent
+                                                 cvMat.step[0],                                          // bytesPerRow
+                                                 colorSpaceRef,                                          // space
+                                                 kCGImageAlphaNoneSkipLast | kCGBitmapByteOrderDefault); // bitmapInfo
 
-    CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
-    CGContextRelease(contextRef);
+    CGContextDrawImage(context, CGRectMake(0, 0, cols, rows), image.CGImage);
+    CGContextRelease(context);
     return cvMat;
 }
 
@@ -34,23 +34,23 @@
     bool alpha = cvMat.channels() == 4;
     CGBitmapInfo bitMapInfo = (alpha ? kCGImageAlphaLast : kCGImageAlphaNone) | kCGBitmapByteOrderDefault;
 
-    CGImageRef imageRef = CGImageCreate(static_cast<size_t>(cvMat.cols), // width
-                                        static_cast<size_t>(cvMat.rows), // height
-                                        8,                               // bitsPerComponent
-                                        8 * cvMat.elemSize(),            // bitsPerPixel
-                                        cvMat.step[0],                   // bytesPerRow
-                                        colorSpaceRef,                   // space
-                                        bitMapInfo,                      // bitmapInfo
-                                        providerRef,                     // provider
-                                        NULL,                            // decode
-                                        false,                           // shouldInterpolate
-                                        kCGRenderingIntentDefault);      // intent
+    CGImageRef cgImage = CGImageCreate(static_cast<size_t>(cvMat.cols), // width
+                                       static_cast<size_t>(cvMat.rows), // height
+                                       8,                               // bitsPerComponent
+                                       8 * cvMat.elemSize(),            // bitsPerPixel
+                                       cvMat.step[0],                   // bytesPerRow
+                                       colorSpaceRef,                   // space
+                                       bitMapInfo,                      // bitmapInfo
+                                       providerRef,                     // provider
+                                       NULL,                            // decode
+                                       false,                           // shouldInterpolate
+                                       kCGRenderingIntentDefault);      // intent
 
-    UIImage *image = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
+    UIImage *uiImage = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
     CGDataProviderRelease(providerRef);
     CGColorSpaceRelease(colorSpaceRef);
-    return image;
+    return uiImage;
 }
 
 
